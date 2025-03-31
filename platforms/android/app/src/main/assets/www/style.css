@@ -1,0 +1,160 @@
+/* Dark Mode Color Scheme */
+    :root {
+      --background-color: #121212;
+      --container-bg: #1e1e1e;
+      --text-color: #e0e0e0;
+      --label-color: #b0b0b0;
+      --input-bg: #2a2a2a;
+      --input-border: #444;
+      --button-bg: #6200ee;
+      --button-bg-hover: #3700b3;
+      --success-bg: #03dac5;
+      --success-bg-hover: #018786;
+      --error-bg: #cf6679;
+      --error-bg-hover: #a8284b;
+      --shadow-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--background-color);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      color: var(--text-color);
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: var(--container-bg);
+      padding: 20px 30px;
+      margin: 40px auto;
+      box-shadow: 0 2px 8px var(--shadow-color);
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    /* Form Styles */
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      flex: 1 0 90px;
+      color: var(--label-color);
+      margin-right: 10px;
+    }
+    .form-group input, .form-group select {
+      flex: 2 0 200px;
+      padding: 8px;
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: 4px;
+      color: var(--text-color);
+    }
+    #addButton {
+      background: var(--button-bg);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin: 0 auto;
+      display: block;
+    }
+    #addButton:hover {
+      background: var(--button-bg-hover);
+    }
+    /* Contact Card Styles */
+    .contact {
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background: var(--container-bg);
+      transition: transform 0.2s;
+    }
+    .contact:hover {
+      transform: translateY(-2px);
+    }
+    .contact h3 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+    .contact div {
+      margin: 8px 0;
+    }
+    .contact button {
+      background: var(--button-bg);
+      border: none;
+      color: #fff;
+      padding: 8px 12px;
+      margin-right: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact button:hover {
+      background: var(--button-bg-hover);
+    }
+    /* Modal Styles */
+    #editModal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+    }
+    #editModalContent {
+      background: var(--container-bg);
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 2px 8px var(--shadow-color);
+    }
+    #editModalContent h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+    #editModalContent .form-group {
+      margin-bottom: 10px;
+    }
+    #modalButtons {
+      display: flex;
+      justify-content: space-between;
+    }
+    #modalButtons button {
+      width: 48%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #saveEditButton {
+      background: var(--success-bg);
+      color: #000;
+    }
+    #saveEditButton:hover {
+      background: var(--success-bg-hover);
+    }
+    #cancelEditButton {
+      background: var(--error-bg);
+      color: #fff;
+    }
+    #cancelEditButton:hover {
+      background: var(--error-bg-hover);
+    }

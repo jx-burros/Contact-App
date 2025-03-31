@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Timer - Dark Mode</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="cordova.js"></script> <!-- Required for plugins to work -->
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Timer</h1>
+
+    <div class="form-group">
+      <label for="nameInput">Name:</label>
+      <input type="text" id="nameInput" placeholder="Enter name">
+    </div>
+
+    <div class="form-group">
+      <label for="durationSelect">Duration:</label>
+      <select id="durationSelect">
+        <option value="86400000">1 day</option>
+        <option value="172800000">2 days</option>
+        <option value="259200000">3 days</option>
+        <option value="432000000">5 days</option>
+        <option value="604800000">7 days</option>
+        <option value="1209600000">2 weeks</option>
+        <option value="2592000000">1 month</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="categorySelect">Category:</label>
+      <select id="categorySelect">
+        <option value="Family">Family</option>
+        <option value="Friend">Friend</option>
+        <option value="Business">Business</option>
+        <option value="Romantic">Romantic</option>
+      </select>
+    </div>
+
+    <!-- ✅ Phone Link UI for Add Form -->
+    <div class="form-group">
+      <label>Phone:</label>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button id="linkPhoneButton" type="button">Link</button>
+        <span id="linkedPhoneDisplay" style="color: #ccc;"></span>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+      <button id="addButton">Add Contact</button>
+    </div>
+
+    <div id="contactsContainer"></div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal">
+    <div id="editModalContent">
+      <h3>Edit Contact</h3>
+
+      <div class="form-group">
+        <label for="editName">Name:</label>
+        <input type="text" id="editName">
+      </div>
+
+      <div class="form-group">
+        <label for="editDuration">Duration:</label>
+        <select id="editDuration">
+          <option value="86400000">1 day</option>
+          <option value="172800000">2 days</option>
+          <option value="259200000">3 days</option>
+          <option value="432000000">5 days</option>
+          <option value="604800000">7 days</option>
+          <option value="1209600000">2 weeks</option>
+          <option value="2592000000">1 month</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="editCategory">Category:</label>
+        <select id="editCategory">
+          <option value="Family">Family</option>
+          <option value="Friend">Friend</option>
+          <option value="Business">Business</option>
+          <option value="Romantic">Romantic</option>
+        </select>
+      </div>
+
+      <!-- ✅ Phone Link for Edit Modal -->
+      <div class="form-group">
+        <label>Phone:</label>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <button id="editLinkPhoneButton" type="button">Link</button>
+          <button id="editClearPhoneButton" type="button">Clear</button>
+          <span id="editLinkedPhoneDisplay" style="color: #ccc;"></span>
+        </div>
+      </div>
+
+      <div id="modalButtons">
+        <button id="saveEditButton">Save</button>
+        <button id="cancelEditButton">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
